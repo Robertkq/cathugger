@@ -1,0 +1,15 @@
+#Directories
+.vs/
+Debug/
+Release/
+out/
+
+#Files
+token.txt
+DiscordBot.sln
+
+#Extensions
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
