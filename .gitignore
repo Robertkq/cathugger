@@ -4,6 +4,8 @@ Debug/
 Release/
 out/
 
+!x64/Debug/
+
 #Files
 token.txt
 DiscordBot.sln
