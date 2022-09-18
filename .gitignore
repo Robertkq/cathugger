@@ -11,6 +11,8 @@ token.txt
 DiscordBot.sln
 
 #Extensions
+*.exe
+*.pdb
 *.vcxproj
 *.vcxproj.filters
 *.vcxproj.user
