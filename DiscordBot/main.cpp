@@ -1,5 +1,6 @@
 #include <dpp/dpp.h>
 #include "ImageRandomizer.h"
+#include "Bot.h"
 
 /* Be sure to place your token in the line below.
  * Follow steps here to get a token:
@@ -16,59 +17,43 @@ int main(int argc, char** argv)
         std::cout << "Too many or too little arguments, only place the bot token as the single command line argument.\n";
         return 0;
     }
-    const std::string BOT_TOKEN = argv[1];
 
-    /* Create bot cluster */
-    dpp::cluster bot(BOT_TOKEN);
+    char ch = 'A';
+    std::string str(std::to_string(ch));
 
-    ImageRandomizer::getInstance(3, 2);
+    kq::Bot bot(argv[1], 3, 2);
 
     /* Output simple log messages to stdout */
-    bot.on_log(dpp::utility::cout_logger());
-
-    /* Handle slash command */
-    bot.on_slashcommand([](const dpp::slashcommand_t& event) {
-        if (event.command.get_command_name() == "ping") {
-            event.reply("Pong!");
-        }
-        });
+    bot.getCluster().on_log(dpp::utility::cout_logger());
 
     bot.on_slashcommand([&bot](const dpp::slashcommand_t& event) {
-        //event.command.get_channel().id
-        dpp::message msg{""};
-        if (event.command.get_command_name() == "cat") {
-            msg.set_content("Meeow!");
+        if (event.command.get_command_name() == "cute")
+        {
+            std::string animal_type = std::get<std::string>(event.get_parameter("animal"));
 
-            std::string filename = ImageRandomizer::getInstance()->getCat();
+            if (animal_type == "animal_cat")
+            {
+                dpp::message msg{"Meeow!"};
+                std::string filename = kq::ImageRandomizer::getInstance()->getCat();
 
-            msg.add_file(filename, dpp::utility::read_file("images/cats/" + filename));
+                msg.add_file(filename, dpp::utility::read_file("images/cats/" + filename));
 
-            //bot.message_create(msg);
-            event.reply(msg);
-        }
-        else if (event.command.get_command_name() == "dog") {
-            msg.set_content("Woof!");
+                event.reply(msg);
+            }
+            else if (animal_type == "animal_dog")
+            {
+                dpp::message msg{ "Woof!" };
+                std::string filename = kq::ImageRandomizer::getInstance()->getDog();
 
-            std::string filename = ImageRandomizer::getInstance()->getDog();
+                msg.add_file(filename, dpp::utility::read_file("images/dogs/" + filename));
 
-            msg.add_file(filename, dpp::utility::read_file("images/dogs/" + filename));
-
-            event.reply(msg);
-        }
-        });
-
-    /* Register slash command here in on_ready */
-    bot.on_ready([&bot](const dpp::ready_t& event) {
-        /* Wrap command registration in run_once to make sure it doesnt run on every full reconnection */
-        if (dpp::run_once<struct register_bot_commands>()) {
-            bot.global_command_create(dpp::slashcommand("ping", "Ping pong!", bot.me.id));
-            bot.global_command_create(dpp::slashcommand("cat", "Get yourself a cute cat photo", bot.me.id));
-            bot.global_command_create(dpp::slashcommand("dog", "Get yourself a cute dog photo", bot.me.id));
+                event.reply(msg);
+            }
         }
         });
 
     /* Start the bot */
-    bot.start(false);
+    bot.start();
 
     return 0;
 }
