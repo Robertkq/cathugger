@@ -1,0 +1,3 @@
+/home/rober/projects/cathugger/build/CMakeFiles/cathugger.dir
+/home/rober/projects/cathugger/build/CMakeFiles/edit_cache.dir
+/home/rober/projects/cathugger/build/CMakeFiles/rebuild_cache.dir
