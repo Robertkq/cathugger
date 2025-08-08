@@ -11,6 +11,9 @@ public:
   void stop();
   void say_skibidi();
 
+private:
+  void register_commands();
+
 public:
   dpp::cluster bot;
 };

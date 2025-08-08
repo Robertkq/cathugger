@@ -2,11 +2,208 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to Cathugger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathugger - Discord Bot</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Cathugger</h1>
-    <button onclick="window.location.href='terms.html'">Terms of Service</button>
-    <button onclick="alert('Test button clicked!')">Test</button>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-brand">
+                <h3 class="text-cyan">🐱 Cathugger</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="content-card fade-in-up">
+            <div class="text-center">
+                <h1>🐱 Welcome to Cathugger</h1>
+                <p style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 2rem;">
+                    The cutest Discord bot that brings adorable cats and dogs to your server!
+                </p>
+                <div style="margin: 2rem 0;">
+                    <button onclick="window.location.href='#features'" class="btn glow">Learn More</button>
+                    <button onclick="inviteBot()" class="btn btn-secondary">Add to Server</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div id="features" class="content-card fade-in-up">
+            <h2 class="text-center mb-2">✨ Features</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="text-align: center; padding: 1.5rem; background: var(--background-hover); border-radius: var(--border-radius);">
+                    <h3 class="text-cyan">🐱 Cute Cats</h3>
+                    <p>Get random adorable cat images with the <code>/cute animal:cat</code> command!</p>
+                </div>
+                <div style="text-align: center; padding: 1.5rem; background: var(--background-hover); border-radius: var(--border-radius);">
+                    <h3 class="text-orange">🐶 Adorable Dogs</h3>
+                    <p>Brighten your day with cute dog pictures using <code>/cute animal:dog</code>!</p>
+                </div>
+                <div style="text-align: center; padding: 1.5rem; background: var(--background-hover); border-radius: var(--border-radius);">
+                    <h3 style="color: var(--accent-purple);">⚡ Fast & Reliable</h3>
+                    <p>Built with modern Discord.js technology for quick responses and reliability.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repository Info Section -->
+        <div class="content-card fade-in-up">
+            <h2 class="text-center mb-2">💻 Open Source Project</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                    Cathugger is completely open source! Check out the code, contribute, or run your own instance.
+                </p>
+                <button onclick="window.open('https://github.com/Robertkq/cathugger', '_blank')" class="btn glow">
+                    📁 View on GitHub
+                </button>
+                <button onclick="window.open('https://github.com/Robertkq/cathugger/issues', '_blank')" class="btn">
+                    🐛 Report Issues
+                </button>
+                <button onclick="window.open('https://github.com/Robertkq/cathugger/fork', '_blank')" class="btn btn-secondary">
+                    🍴 Fork Project
+                </button>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="text-align: center; padding: 1.5rem; background: var(--background-hover); border-radius: var(--border-radius);">
+                    <h3 class="text-cyan">🛠️ Built With</h3>
+                    <p>Modern C++ with the DPP Discord library</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">CMake build system included</p>
+                </div>
+                <div style="text-align: center; padding: 1.5rem; background: var(--background-hover); border-radius: var(--border-radius);">
+                    <h3 class="text-orange">📋 MIT License</h3>
+                    <p>Free to use, modify, and distribute</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Perfect for learning Discord bot development</p>
+                </div>
+                <div style="text-align: center; padding: 1.5rem; background: var(--background-hover); border-radius: var(--border-radius);">
+                    <h3 style="color: var(--accent-purple);">🤝 Contributions Welcome</h3>
+                    <p>Submit PRs, report bugs, or suggest features</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Great for beginner contributors</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--background-hover); border-radius: var(--border-radius); border-left: 4px solid var(--primary-cyan);">
+                <h4 style="color: var(--primary-cyan); margin-bottom: 1rem;">🚀 Quick Setup</h4>
+                <ol style="text-align: left; max-width: 600px; margin: 0 auto;">
+                    <li>Clone the repository: <code>git clone https://github.com/Robertkq/cathugger.git</code></li>
+                    <li>Install dependencies and build with CMake</li>
+                    <li>Get your Discord bot token from the Discord Developer Portal</li>
+                    <li>Run the bot: <code>./cathugger YOUR_BOT_TOKEN</code></li>
+                </ol>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                    Detailed setup instructions available in the repository README
+                </p>
+            </div>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="content-card fade-in-up">
+            <h2 class="text-center mb-2">🚀 How to Use</h2>
+            <ol style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                <li class="mb-1">Invite Cathugger to your Discord server using the button above</li>
+                <li class="mb-1">Type <span class="highlight">/cute</span> in any channel</li>
+                <li class="mb-1">Choose either <strong class="text-cyan">cat</strong> or <strong class="text-orange">dog</strong></li>
+                <li class="mb-1">Enjoy the cuteness! 🥰</li>
+            </ol>
+        </div>
+
+        <!-- Stats/Info Section -->
+        <div class="content-card fade-in-up">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                <div>
+                    <h3 class="text-cyan" style="font-size: 2rem; margin-bottom: 0.5rem;">🔒</h3>
+                    <h4>Privacy First</h4>
+                    <p style="margin: 0;">No data collection or storage</p>
+                </div>
+                <div>
+                    <h3 class="text-orange" style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</h3>
+                    <h4>Lightning Fast</h4>
+                    <p style="margin: 0;">Instant responses to commands</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-green); font-size: 2rem; margin-bottom: 0.5rem;">🎉</h3>
+                    <h4>Free Forever</h4>
+                    <p style="margin: 0;">No premium features or costs</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="content-card fade-in-up text-center">
+            <h3 class="mb-1">📋 Important Information</h3>
+            <div>
+                <button onclick="window.location.href='terms.html'" class="btn">Terms of Service</button>
+                <button onclick="window.location.href='privacy.html'" class="btn">Privacy Policy</button>
+            </div>
+            <p style="margin-top: 1rem; color: var(--text-muted);">
+                By using Cathugger, you agree to our Terms of Service and Privacy Policy.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cathugger Discord Bot. Made with ❤️ and lots of ☕</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+                Not affiliated with Discord Inc. All cat and dog images are for entertainment purposes.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function inviteBot() {
+            // Replace with your actual bot invite link
+            const inviteUrl = 'https://discord.com/oauth2/authorize?client_id=1020794810870808656';
+            
+            // For now, show an alert - replace with actual invite URL
+            alert('🚀 Bot invite functionality coming soon!\n\nFor now, you can run the bot locally by following the setup instructions in the repository.');
+            
+            // Uncomment when you have the actual invite URL:
+            // window.open(inviteUrl, '_blank');
+        }
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>

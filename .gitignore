@@ -3,6 +3,7 @@
 Debug/
 Release/
 out/
+build/
 
 !x64/Debug/
 
