@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/cathugger.dir/src/bot.cpp.o CMakeFiles/cathugger.dir/src/main.cpp.o CMakeFiles/cathugger.dir/src/utils.cpp.o -o cathugger  -Wl,-rpath,/usr/local/lib /usr/local/lib/libdpp.so.10.1.4 -lssl -lcrypto -lz 
