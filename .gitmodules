@@ -1,3 +1,6 @@
 [submodule "vendor/DPP"]
 	path = vendor/DPP
 	url = https://github.com/brainboxdotcc/DPP.git
+[submodule "vendor/json"]
+	path = vendor/json
+	url = https://github.com/nlohmann/json.git
